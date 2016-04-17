@@ -1,0 +1,29 @@
+﻿@using GuildForum.Models;
+@model ForumIndexModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@foreach (ForumSection forumSection in Model.ForumSections)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">@forumSection.Title</div>
+        <table class="table">
+            <tbody class="table-striped">
+                @foreach (Forum forum in forumSection.Forums)
+                {
+                    <tr>
+                        <td>
+                            @forum.Title
+                        </td>
+                        <td>
+                            @forum.SubTitle
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
