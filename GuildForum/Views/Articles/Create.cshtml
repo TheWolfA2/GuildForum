@@ -9,7 +9,7 @@
 }
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Articles", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
@@ -36,17 +36,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })*@
                 @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
                 <div class="mdd_toolbar" />
                 @Html.TextAreaFor(model => model.Content, htmlAttributes: new { @class = "mdd_editor" })
                 <div class="mdd_preview" />
             </div>
         </div>
-
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input style="margin-top: 12px;" type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>

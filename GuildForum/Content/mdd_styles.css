@@ -98,12 +98,12 @@ div.mdd_syntax pre
 
 div.mdd_toolbar_wrap 
 {
-    width:100%;
+    width:49.5%;
 }
 div.mdd_toolbar
 {
 	padding:5px;
-	height:20px;
+	/*height:20px;*/
 }
 
 div.mdd_toolbar ul
@@ -183,6 +183,9 @@ div.mdd_links a:hover
 div.mdd_editor_wrap
 {
     padding-right: 8px;
+    width: 49.5%;
+    display: inline-block;
+    float: left;
 }
 textarea.mdd_editor
 {
@@ -190,6 +193,7 @@ textarea.mdd_editor
 	resize:none;
 	margin:0;padding: 3px;
     max-width: none;
+    height: 250px;
 }
 
 div.mdd_resizer_wrap
@@ -210,3 +214,10 @@ div.mdd_resizer
 	cursor:n-resize;
 }
 
+div.mdd_preview {
+    width: 50%;
+    display: inline-block;
+    float: right;
+    max-height: 250px;
+    overflow: auto;
+}

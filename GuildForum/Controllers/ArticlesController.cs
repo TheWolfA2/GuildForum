@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -37,20 +38,24 @@ namespace GuildForum.Controllers
         }
 
         // GET: Articles/Create
+        [Authorize]
         public ActionResult Create()
         {
-            ViewBag.AuthorID = new SelectList(_db.Users, "Id", "FullName");
-            ViewBag.EditAuthorID = new SelectList(_db.Users, "Id", "FullName");
             return View();
         }
 
         // POST: Articles/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,SubTitle,Content,PostDate,AuthorID,EditDate,EditAuthorID")] Article article)
+        public ActionResult Create([Bind(Include = "Title,SubTitle,Content")] Article article)
         {
+            article.AuthorID = User.Identity.GetUserId();
+            article.PostDate = DateTime.Now;
+            ModelState["AuthorID"].Errors.Clear();
+            UpdateModel(article);
             if (ModelState.IsValid)
             {
                 _db.Articles.Add(article);
@@ -58,8 +63,6 @@ namespace GuildForum.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AuthorID = new SelectList(_db.Users, "Id", "FullName", article.AuthorID);
-            ViewBag.EditAuthorID = new SelectList(_db.Users, "Id", "FullName", article.EditAuthorID);
             return View(article);
         }
 

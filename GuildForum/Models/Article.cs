@@ -19,12 +19,12 @@ namespace GuildForum.Models
         [Required, MinLength(5)]
         public string Content { get; set; }
 
-        [Required, Display(Name = "Posting Date")]
+        [Required, Display(Name = "Posting Date"), DataType(DataType.DateTime)]
         public DateTime PostDate { get; set; }
         [Required, ForeignKey("Author"), Display(Name = "Author")]
         public string AuthorID { get; set; }
-        [Display(Name = "Date of Last Update")]
-        public DateTime EditDate { get; set; }
+        [Display(Name = "Date of Last Update"), DataType(DataType.DateTime)]
+        public DateTime? EditDate { get; set; }
         [ForeignKey("EditAuthor"), Display(Name = "Author who last edited")]
         public string EditAuthorID { get; set; }
 

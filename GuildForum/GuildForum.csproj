@@ -223,6 +223,14 @@
     <Compile Include="Migrations\201604140332014_UpdateAppUser.Designer.cs">
       <DependentUpon>201604140332014_UpdateAppUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604200318210_ChangedEditDate.cs" />
+    <Compile Include="Migrations\201604200318210_ChangedEditDate.Designer.cs">
+      <DependentUpon>201604200318210_ChangedEditDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604200319341_NullableEditDate.cs" />
+    <Compile Include="Migrations\201604200319341_NullableEditDate.Designer.cs">
+      <DependentUpon>201604200319341_NullableEditDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
@@ -339,6 +347,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604140332014_UpdateAppUser.resx">
       <DependentUpon>201604140332014_UpdateAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604200318210_ChangedEditDate.resx">
+      <DependentUpon>201604200318210_ChangedEditDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604200319341_NullableEditDate.resx">
+      <DependentUpon>201604200319341_NullableEditDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
