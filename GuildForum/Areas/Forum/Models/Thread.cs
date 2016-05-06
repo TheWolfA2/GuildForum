@@ -1,11 +1,12 @@
-﻿using System;
+﻿using GuildForum.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace GuildForum.Models
+namespace GuildForum.Areas.Forum.Models
 {
     public class Thread
     {
@@ -20,11 +21,14 @@ namespace GuildForum.Models
         public string Content { get; set; }
         [ForeignKey("Forum"), Required]
         public int ForumID { get; set; }
+        [ForeignKey("Author")]
+        public string AuthorID { get; set; }
         #endregion
 
         #region Navigation properties
         public virtual Forum Forum { get; set; }
         public virtual ICollection<ThreadReply> Replies { get; set; }
+        public virtual ApplicationUser Author { get; set; }
         #endregion
     }
 }

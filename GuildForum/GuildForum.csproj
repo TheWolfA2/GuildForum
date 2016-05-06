@@ -199,9 +199,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
+    <Compile Include="Areas\Lore\LoreAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
-    <Compile Include="Controllers\ForumsController.cs" />
+    <Compile Include="Areas\Forum\Controllers\ForumsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,14 +233,22 @@
     <Compile Include="Migrations\201604200319341_NullableEditDate.Designer.cs">
       <DependentUpon>201604200319341_NullableEditDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604200513381_UpdatedForumTitleLen.cs" />
+    <Compile Include="Migrations\201604200513381_UpdatedForumTitleLen.Designer.cs">
+      <DependentUpon>201604200513381_UpdatedForumTitleLen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604200518080_UpdateForumSectionTitleLen.cs" />
+    <Compile Include="Migrations\201604200518080_UpdateForumSectionTitleLen.Designer.cs">
+      <DependentUpon>201604200518080_UpdateForumSectionTitleLen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\Forum\Forum.cs" />
-    <Compile Include="Models\Forum\ForumSection.cs" />
-    <Compile Include="Models\Forum\ForumViewModel.cs" />
-    <Compile Include="Models\Forum\ThreadReply.cs" />
-    <Compile Include="Models\Forum\Thread.cs" />
+    <Compile Include="Areas\Forum\Models\Forum.cs" />
+    <Compile Include="Areas\Forum\Models\ForumSection.cs" />
+    <Compile Include="Areas\Forum\Models\ForumViewModel.cs" />
+    <Compile Include="Areas\Forum\Models\ThreadReply.cs" />
+    <Compile Include="Areas\Forum\Models\Thread.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ArticleViewModel.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -256,9 +266,9 @@
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Areas\Lore\Views\web.config" />
+    <Content Include="Areas\Lore\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Forum\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -316,7 +326,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
-    <Content Include="Views\Forums\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\Forums\Index.cshtml" />
     <Content Include="Views\Articles\Create.cshtml" />
     <Content Include="Views\Articles\Delete.cshtml" />
     <Content Include="Views\Articles\Details.cshtml" />
@@ -325,6 +335,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Forum\Views\Shared\" />
+    <Folder Include="Areas\Lore\Controllers\" />
+    <Folder Include="Areas\Lore\Models\" />
+    <Folder Include="Areas\Lore\Views\Shared\" />
     <Folder Include="Views\Lore\" />
   </ItemGroup>
   <ItemGroup>
@@ -353,6 +367,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604200319341_NullableEditDate.resx">
       <DependentUpon>201604200319341_NullableEditDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604200513381_UpdatedForumTitleLen.resx">
+      <DependentUpon>201604200513381_UpdatedForumTitleLen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604200518080_UpdateForumSectionTitleLen.resx">
+      <DependentUpon>201604200518080_UpdateForumSectionTitleLen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

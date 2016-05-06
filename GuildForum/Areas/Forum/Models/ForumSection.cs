@@ -5,14 +5,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace GuildForum.Models
+namespace GuildForum.Areas.Forum.Models
 {
     public class ForumSection
     {
         #region Columns
         [Key]
         public int ID { get; set; }
-        [MinLength(5), Required]
+        [MinLength(4), Required]
         public string Title { get; set; }
         [Index(IsUnique = true), Required]
         public int SortOrder { get; set; }

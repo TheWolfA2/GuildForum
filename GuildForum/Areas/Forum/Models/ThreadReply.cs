@@ -1,11 +1,12 @@
-﻿using System;
+﻿using GuildForum.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace GuildForum.Models
+namespace GuildForum.Areas.Forum.Models
 {
     public class ThreadReply
     {
@@ -18,10 +19,13 @@ namespace GuildForum.Models
         public DateTime PostDate { get; set; }
         [ForeignKey("Thread")]
         public int ThreadID { get; set; }
+        [ForeignKey("Author"), Required]
+        public string AuthorID { get; set; }
         #endregion
 
         #region Navigation Properties
         public virtual Thread Thread { get; set; }
+        public virtual ApplicationUser Author { get; set; }
         #endregion
     }
 }

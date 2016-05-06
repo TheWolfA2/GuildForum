@@ -1,12 +1,12 @@
-﻿using System.Data.Entity;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using GuildForum.Areas.Forum.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.ComponentModel.DataAnnotations;
-using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace GuildForum.Models
 {
@@ -46,6 +46,7 @@ namespace GuildForum.Models
 
         #region Navigation properties
         public virtual ICollection<Article> AuthoredArticles { get; set; }
+        public virtual ICollection<Thread> Threads { get; set; }
         public virtual ICollection<ThreadReply> ThreadPosts { get; set; }
         #endregion
 
@@ -68,6 +69,15 @@ namespace GuildForum.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().HasMany(u => u.ThreadPosts)
+                .WithRequired(tr => tr.Author).WillCascadeOnDelete(false);
+            modelBuilder.Entity<ApplicationUser>().HasMany(u => u.Threads)
+                .WithOptional(t => t.Author).WillCascadeOnDelete(false);
         }
 
         public DbSet<ForumSection> ForumSections { get; set; }
