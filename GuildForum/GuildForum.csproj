@@ -246,7 +246,7 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Areas\Forum\Models\Forum.cs" />
     <Compile Include="Areas\Forum\Models\ForumSection.cs" />
-    <Compile Include="Areas\Forum\Models\ForumViewModel.cs" />
+    <Compile Include="Areas\Forum\Models\ForumViewModels.cs" />
     <Compile Include="Areas\Forum\Models\ThreadReply.cs" />
     <Compile Include="Areas\Forum\Models\Thread.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -269,6 +269,8 @@
     <Content Include="Areas\Lore\Views\web.config" />
     <Content Include="Areas\Lore\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\web.config" />
+    <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -335,11 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Forum\Views\Shared\" />
     <Folder Include="Areas\Lore\Controllers\" />
     <Folder Include="Areas\Lore\Models\" />
     <Folder Include="Areas\Lore\Views\Shared\" />
-    <Folder Include="Views\Lore\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

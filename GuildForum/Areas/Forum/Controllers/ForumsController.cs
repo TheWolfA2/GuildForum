@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GuildForum.Controllers
+namespace GuildForum.Areas.Forum.Controllers
 {
     public class ForumsController : Controller
     {
