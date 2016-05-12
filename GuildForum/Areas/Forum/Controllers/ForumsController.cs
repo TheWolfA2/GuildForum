@@ -15,9 +15,18 @@ namespace GuildForum.Areas.Forum.Controllers
         // GET: Forums
         public ActionResult Index()
         {
-            ForumIndexModel model = new ForumIndexModel();
-            model.ForumSections = _db.ForumSections.ToList();
-            return View(model);
+            List<ForumSection> forumSections = _db.ForumSections.ToList();
+            return View(forumSections);
+        }
+
+        public ActionResult Threads(int id)
+        {
+            Models.Forum forum = _db.Forums.Find(id);
+            if (forum == null)
+            {
+                // TODO: Handle no forum with given id
+            }
+            return View(new ThreadListModel(forum));
         }
     }
 }

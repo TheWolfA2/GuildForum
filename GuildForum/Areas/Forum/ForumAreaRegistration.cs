@@ -16,8 +16,8 @@ namespace GuildForum.Areas.Forum
         {
             context.MapRoute(
                 "Forum_default",
-                "Forum/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional },
+                "Forum/{action}/{id}",
+                new {controller = "Forums", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "GuildForum.Areas.Forum.Controllers" }
             );
         }

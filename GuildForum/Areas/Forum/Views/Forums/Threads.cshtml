@@ -1,0 +1,48 @@
+﻿@using GuildForum.Areas.Forum.Models
+@model ThreadListModel
+
+@{
+    ViewBag.Title = "Forum";
+}
+
+<h2>@Model.Title</h2>
+<h4>@Model.SubTitle</h4>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Thread</th>
+                <th>Number of Replies</th>
+                <th>Last Post</th>
+            </tr>
+        </thead>
+        <tbody>
+            @* TODO: Convert to paginated tables in the future *@
+            @foreach (ThreadListItem thread in Model.Threads)
+            {
+                <tr>
+                    <td>
+                        @thread.Title
+                    </td>
+                    <td>
+                        @thread.NumReplies
+                    </td>
+                    <td>
+                        @if (thread.LastPost == null)
+                        {
+                            <text>None</text>
+                        }
+                        else
+                        {
+                            @* TODO: Create relative date for last post *@
+                            <div>
+                                @thread.LastPost.Author on @thread.LastPost.PostDate.ToString("d");
+                            </div>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

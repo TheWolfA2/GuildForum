@@ -1,12 +1,14 @@
 ﻿@using GuildForum.Areas.Forum.Models;
-@model ForumIndexModel
+@model IEnumerable<ForumSection>
 
 @{
     ViewBag.Title = "Index";
 }
 
+<h2>Forums</h2>
+
 <div class="row">
-    @foreach (ForumSection forumSection in Model.ForumSections)
+    @foreach (ForumSection forumSection in Model)
     {
         <div class="panel panel-default">
             <div class="panel-heading">@forumSection.Title</div>
@@ -16,7 +18,7 @@
                 {
                         <tr>
                             <td>
-                                @forum.Title
+                                @Html.ActionLink(forum.Title, "Forum", new { id = forum.ID })
                             </td>
                             <td>
                                 @forum.SubTitle
@@ -27,5 +29,4 @@
             </table>
         </div>
     }
-
 </div>
