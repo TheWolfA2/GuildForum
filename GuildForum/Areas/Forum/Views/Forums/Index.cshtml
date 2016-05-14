@@ -15,10 +15,10 @@
             <table class="table">
                 <tbody class="table-striped">
                     @foreach (Forum forum in forumSection.Forums)
-                {
+                    {
                         <tr>
                             <td>
-                                @Html.ActionLink(forum.Title, "Forum", new { id = forum.ID })
+                                @Html.ActionLink(forum.Title, "Threads", new { id = forum.ID })
                             </td>
                             <td>
                                 @forum.SubTitle

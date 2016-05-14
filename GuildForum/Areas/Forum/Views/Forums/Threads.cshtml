@@ -5,16 +5,25 @@
     ViewBag.Title = "Forum";
 }
 
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#threadsTable").DataTable();
+        });
+    </script>
+}
+
 <h2>@Model.Title</h2>
 <h4>@Model.SubTitle</h4>
 
 <div class="row">
-    <table class="table">
+    @Html.ActionLink("Create a new thread", "NewThread", new { area = "Forum", id = Model.ForumId })
+    <table id="threadsTable" class="table">
         <thead>
             <tr>
-                <th>Thread</th>
-                <th>Number of Replies</th>
-                <th>Last Post</th>
+                <th width="50%">Thread</th>
+                <th width="25%">Number of Replies</th>
+                <th width="25%">Last Post</th>
             </tr>
         </thead>
         <tbody>

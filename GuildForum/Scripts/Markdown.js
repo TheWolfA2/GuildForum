@@ -2,6 +2,7 @@
     $("textarea.mdd_editor").MarkdownDeep({
         disableTabHandling: true,
         help_location: "/Content/mdd_help.htm",
-        resizebar: false
+        resizebar: false,
+        SafeMode: true,
     });
 });

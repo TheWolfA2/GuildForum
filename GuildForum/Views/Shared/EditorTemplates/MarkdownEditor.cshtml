@@ -1,0 +1,7 @@
+﻿@model string
+
+@Scripts.Render("~/bundles/MarkdownDeep")
+
+<div class="mdd_toolbar" />
+@Html.TextAreaFor(model => model, htmlAttributes: new { @class = "mdd_editor" })
+<div class="mdd_preview" />

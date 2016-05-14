@@ -271,7 +271,8 @@
     <Content Include="Areas\Forum\Views\web.config" />
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Forum\Views\Forums\Forum.cshtml" />
+    <Content Include="Areas\Forum\Views\Forums\Threads.cshtml" />
+    <Content Include="Areas\Forum\Views\Forums\NewThread.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -335,6 +336,7 @@
     <Content Include="Views\Articles\Details.cshtml" />
     <Content Include="Views\Articles\Edit.cshtml" />
     <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MarkdownEditor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
